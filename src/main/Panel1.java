@@ -281,7 +281,7 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoActionPerformed
         
-        Panel2 win = new Panel2();
+        Panel2 win = new Panel2(highoutput,lowoutput,averagemark,abovemark,failmark);
         win.setVisible(true);
         this.setVisible(false);
         
@@ -348,28 +348,29 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
                 lowoutput= all[i];
             }
         }
-        int averagemark=0;
+        
         for (int i=0;i<all.length;i++){
         sum+=all[i]; 
                 
         }
-        averagemark=sum/all.length;
+        int average=sum/all.length;
+        averagemark=String.valueOf(averagemark);
         int a=0;
         for(int i=0;i<all.length;i++){
          if(all[i]>90){
              i++;
-             i=Integer.parseInt(abovemark);
+             abovemark= Integer.toString(i);
          }else{
-             a=Integer.parseInt(abovemark);
+             abovemark= Integer.toString(i);
          }   
         }
         
         for(int i=0;i<all.length;i++){
          if(all[i]<50){
              i++;
-             i=Integer.parseInt(failmark);
+             failmark= Integer.toString(i);
          }else{
-             a=Integer.parseInt(failmark);
+             failmark= Integer.toString(i);
          }   
         }
         
