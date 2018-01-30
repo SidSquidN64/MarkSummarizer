@@ -7,16 +7,19 @@ package main;
 
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import javax.swing.JTextField;
 import main.Panel2;
 
 
 
 
 public class Panel1 extends javax.swing.JFrame {
-private static String highoutput,lowoutput,averagemark,abovemark,failmark;
-    
+private static int highoutput,lowoutput,averagemark,abovemark,failmark;
+private static String Comment;
+private static javax.swing.JTextField input[];
     
     
 
@@ -40,6 +43,21 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
         outputTn.setText(tn);
         outputPn.setText(pn);
         outputSn.setText(sn);
+        input = new javax.swing.JTextField[12];
+        input[0]= unit1;
+        input[1]= unit2;
+        input[2]= unit3;
+        input[3]= unit4;
+        input[4]= unit5;
+        input[5]= unit6;
+        input[6]= unit7;
+        input[7]= unit8;
+        input[8]= unit9;
+        input[9]= unit10;
+        input[10]= unit11;
+        input[11]= unit12;
+        
+        
         
     }
 
@@ -131,6 +149,24 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
 
         jLabel19.setText("Unit 12");
 
+        unit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unit1ActionPerformed(evt);
+            }
+        });
+
+        unit12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unit12ActionPerformed(evt);
+            }
+        });
+
+        unit11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unit11ActionPerformed(evt);
+            }
+        });
+
         Go.setText("Go");
         Go.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,23 +211,16 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel18))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(outputTn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(unit2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(unit8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(unit5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(unit11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(outputTn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(unit8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(unit5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(unit11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(unit2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Go)
                                 .addGap(54, 54, 54)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -210,7 +239,7 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
                                     .addComponent(unit6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(unit9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(unit12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(27, 29, Short.MAX_VALUE))
+                .addGap(27, 35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,115 +310,93 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
 
     private void GoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoActionPerformed
         
-        Panel2 win = new Panel2(highoutput,lowoutput,averagemark,abovemark,failmark);
-        win.setVisible(true);
-        this.setVisible(false);
         
         int mark1,mark2,mark3,mark4,mark5,mark6,mark7,mark8,mark9,mark10,mark11,mark12;
-        String Unit1=null;
-        String Unit2=null;
-        String Unit3=null;
-        String Unit4=null;
-        String Unit5=null;
-        String Unit6=null;
-        String Unit7=null;
-        String Unit8=null;
-        String Unit9=null;
-        String Unit10=null;
-        String Unit11=null;
-        String Unit12=null;
-       
-        Unit1=unit1.getText();
-        Unit2=unit2.getText();
-        Unit3=unit3.getText();
-        Unit4=unit4.getText();
-        Unit5=unit5.getText();
-        Unit6=unit6.getText();
-        Unit7=unit7.getText();
-        Unit8=unit8.getText();
-        Unit9=unit9.getText();
-        Unit10=unit10.getText();
-        Unit11=unit11.getText();
-        Unit12=unit12.getText();
+        
+        
+        
+        
         int all [] = new int [12];
-        mark1=Integer.parseInt(Unit1);
-        mark2=Integer.parseInt(Unit2);
-        mark3=Integer.parseInt(Unit3);
-        mark4=Integer.parseInt(Unit4);
-        mark5=Integer.parseInt(Unit5);
-        mark6=Integer.parseInt(Unit6);
-        mark7=Integer.parseInt(Unit7);
-        mark8=Integer.parseInt(Unit8);
-        mark9=Integer.parseInt(Unit9);
-        mark10=Integer.parseInt(Unit10);
-        mark11=Integer.parseInt(Unit11);
-        mark12=Integer.parseInt(Unit12);
-        all[1]=mark1;
-        all[2]=mark2;
-        all[3]=mark3;
-        all[4]=mark4;
-        all[5]=mark5;
-        all[6]=mark6;
-        all[7]=mark7;
-        all[8]=mark8;
-        all[9]=mark9;
-        all[10]=mark10;
-        all[11]=mark11;
-        all[12]=mark12;
+        ArrayList <Integer> checkEmpty = new ArrayList();
+        for (int i = 0; i < input.length; i++) {
+            if("".equals(input[i].getText())){
+                checkEmpty.add(i);
+            }
+        }
+        for (int i = 0; i < all.length; i++) {
+            boolean e = true;
+            for (int j = 0; j < checkEmpty.size(); j++) {
+                if(checkEmpty.get(j) == i){
+                    e=false;
+                    break;
+                }
+                
+            }
+            if(e){
+                all[i]=Integer.parseInt(input[i].getText());
+            }else{
+                
+                 all[i]=-1;
+            }
+        }
         int highoutput = all[0];
         int lowoutput = all[0];
         int sum =0;
         
         for (int i = 0; i < all.length; i++) {
+            if(all[i]!=-1){
             if(highoutput < all[i]){
                 highoutput = all[i];
             }
             if(lowoutput > all[i]){
                 lowoutput= all[i];
-            }
+            }}
         }
         
         for (int i=0;i<all.length;i++){
-        sum+=all[i]; 
+        if(all[i]!=-1){
+            sum+=all[i];
+        }
                 
         }
-        int average=sum/all.length;
-        averagemark=String.valueOf(averagemark);
+        int average=sum/(all.length-checkEmpty.size());
+        averagemark=average;
+        
         int a=0;
         for(int i=0;i<all.length;i++){
          if(all[i]>90){
-             i++;
-             abovemark= Integer.toString(i);
-         }else{
-             abovemark= Integer.toString(i);
-         }   
+             a++;
+             abovemark= a;
+         }
         }
         
+        int x=0;
         for(int i=0;i<all.length;i++){
-         if(all[i]<50){
-             i++;
-             failmark= Integer.toString(i);
-         }else{
-             failmark= Integer.toString(i);
-         }   
+            if(all[i]!=-1){
+         if(all[i]<60){
+             x++;
+             failmark= x;
+         }}
         }
         
+         if(average>=90&&average<=100){
+        Comment="Excellent";    
+        }else if(average>=70&&average<=90){
+        Comment="Good";
+        }else if(average>=50&&average<=70){
+        Comment="Needs improve";    
+        }else{
+        Comment="Emmmmmmmmmm....";
+        }
+         
+        Panel2 win = new Panel2(highoutput,lowoutput,averagemark,abovemark,failmark,Comment);
+        win.setVisible(true);
+        this.setVisible(false);
         
-
-
-
-
-
-
-
-
-
-    
         
-        
-        
-        
-        
+       
+            
+            
         
         
         
@@ -405,6 +412,18 @@ private static String highoutput,lowoutput,averagemark,abovemark,failmark;
         
         
     }//GEN-LAST:event_GoActionPerformed
+
+    private void unit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_unit1ActionPerformed
+
+    private void unit11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unit11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_unit11ActionPerformed
+
+    private void unit12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unit12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_unit12ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -78,23 +78,13 @@
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="outputTn" min="-2" pref="88" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          <Component id="unit2" min="-2" pref="40" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="unit8" min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Component id="unit5" min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Component id="unit11" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="outputTn" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <Component id="unit8" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="unit5" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="unit11" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="unit2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -127,7 +117,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="27" pref="29" max="32767" attributes="0"/>
+                  <EmptySpace min="27" pref="35" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -287,6 +277,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="unit1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unit1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="unit2">
         </Component>
@@ -305,8 +298,14 @@
         <Component class="javax.swing.JTextField" name="unit9">
         </Component>
         <Component class="javax.swing.JTextField" name="unit12">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unit12ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="unit11">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unit11ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="unit10">
         </Component>
